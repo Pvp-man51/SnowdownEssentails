@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "snowdownessentails",
+	"version": "${version}",
+	"name": "SnowdownEssentails",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Pvp-man"
+	],
+	"contact": {
+		"homepage": "https://github.com/Pvp-man51",
+		"sources": "https://github.com/Pvp-man51"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/snowdownessentails/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.pvpman.snowdownessentails.SnowdownEssentails"
+		],
+		"client": [
+			"com.pvpman.snowdownessentails.SnowdownEssentailsClient"
+		],
+		"fabric-datagen": [
+			"com.pvpman.snowdownessentails.SnowdownEssentailsDataGenerator"
+		]
+	},
+	"mixins": [
+		"snowdownessentails.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.24",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

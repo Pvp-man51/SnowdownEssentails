@@ -13,7 +13,7 @@ public class IronArmorModel extends GeoModel<IronArmorItem> {
 
     @Override
     public Identifier getTextureResource(IronArmorItem animatable) {
-        return new Identifier(SnowdownEssentails.MOD_ID, "textures/armor/iron_armor.png");
+        return new Identifier(SnowdownEssentails.MOD_ID, "textures/armor/sde_iron_armor.png");
     }
 
     @Override

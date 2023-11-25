@@ -10,7 +10,7 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    IRON("iron", 15, new int[] { 2, 5, 6, 2}, 9,
+    SDE_IRON("iron", 15, new int[] { 2, 5, 6, 2}, 9,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0f, 0f, () -> Ingredient.ofItems(Items.IRON_INGOT))
     ;
 

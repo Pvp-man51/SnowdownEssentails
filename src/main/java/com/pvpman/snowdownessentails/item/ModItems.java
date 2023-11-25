@@ -10,14 +10,14 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
 
-    public static final Item IRON_HELMET = registerItem("iron_helmet",
-            new ArmorItem(ModArmorMaterials.IRON, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item IRON_CHESTPLATE = registerItem("iron_chestplate",
-            new ArmorItem(ModArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item IRON_LEGGINGS = registerItem("iron_leggings",
-            new ArmorItem(ModArmorMaterials.IRON, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
-    public static final Item IRON_BOOTS = registerItem("iron_boots",
-            new ArmorItem(ModArmorMaterials.IRON, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item SDE_IRON_HELMET = registerItem("sde_iron_helmet",
+            new ArmorItem(ModArmorMaterials.SDE_IRON, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item SDE_IRON_CHESTPLATE = registerItem("sde_iron_chestplate",
+            new ArmorItem(ModArmorMaterials.SDE_IRON, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item SDE_IRON_LEGGINGS = registerItem("sde_iron_leggings",
+            new ArmorItem(ModArmorMaterials.SDE_IRON, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item SDE_IRON_BOOTS = registerItem("sde_iron_boots",
+            new ArmorItem(ModArmorMaterials.SDE_IRON, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(SnowdownEssentails.MOD_ID, name), item);

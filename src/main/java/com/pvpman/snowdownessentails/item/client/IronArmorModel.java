@@ -8,16 +8,16 @@ import software.bernie.geckolib.model.GeoModel;
 public class IronArmorModel extends GeoModel<IronArmorItem> {
     @Override
     public Identifier getModelResource(IronArmorItem animatable) {
-        return new Identifier(SnowdownEssentails.MOD_ID, "geo/iron_armor.geo.json");
+        return new Identifier(SnowdownEssentails.MOD_ID, "geo/armor.geo.json");
     }
 
     @Override
     public Identifier getTextureResource(IronArmorItem animatable) {
-        return new Identifier(SnowdownEssentails.MOD_ID, "textures/armor/sde_iron_armor.png");
+        return new Identifier(SnowdownEssentails.MOD_ID, "textures/armor/iron_armor.png");
     }
 
     @Override
     public Identifier getAnimationResource(IronArmorItem animatable) {
-        return new Identifier(SnowdownEssentails.MOD_ID, "animations/iron_armor.animation.json");
+        return new Identifier(SnowdownEssentails.MOD_ID, "animations/armor.animation.json");
     }
 }

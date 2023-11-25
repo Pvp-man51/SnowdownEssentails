@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "snowdownessentails:item/iron_chestplate"
+    "layer0": "snowdownessentails:item/leather_belt"
   }
 }

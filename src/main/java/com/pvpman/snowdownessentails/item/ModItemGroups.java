@@ -13,13 +13,18 @@ public class ModItemGroups {
 
     public static final ItemGroup SNOWDOWN_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(SnowdownEssentails.MOD_ID, "snowdown"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.snowdown"))
-                    .icon(() -> new ItemStack(ModItems.SDE_IRON_HELMET)).entries((displayContext, entries) -> {
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.snowdown"))
+                    .icon(() -> new ItemStack(ModItems.IRON_HAT)).entries((displayContext, entries) -> {
 
-                        entries.add(ModItems.SDE_IRON_HELMET);
-                        entries.add(ModItems.SDE_IRON_CHESTPLATE);
-                        entries.add(ModItems.SDE_IRON_LEGGINGS);
-                        entries.add(ModItems.SDE_IRON_BOOTS);
+                        entries.add(ModItems.LEATHER_HAT);
+                        entries.add(ModItems.LEATHER_CHEST_BELT);
+                        entries.add(ModItems.LEATHER_BELT);
+                        entries.add(ModItems.LEATHER_BOOTS);
+
+                        entries.add(ModItems.IRON_HAT);
+                        entries.add(ModItems.IRON_CHEST_BELT);
+                        entries.add(ModItems.IRON_BELT);
+                        entries.add(ModItems.IRON_BOOTS);
 
                     }).build());
 

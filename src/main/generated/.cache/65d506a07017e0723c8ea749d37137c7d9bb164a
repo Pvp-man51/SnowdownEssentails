@@ -1,5 +1,9 @@
-// 1.20.1	2023-11-25T15:59:12.0845707	SnowdownEssentails/Model Definitions
-aeab95d23034412c11956a7f2ccc7ed7321d3b97 assets\snowdownessentails\models\item\iron_helmet.json
-5095ce7a3937353f68599ee5dc88e26757d57051 assets\snowdownessentails\models\item\iron_chestplate.json
-31393917f1e2cc8fb871f2c2a30cdfa3e4f81693 assets\snowdownessentails\models\item\iron_leggings.json
+// 1.20.1	2023-11-25T20:06:32.5811514	SnowdownEssentails/Model Definitions
+8e0b27ba07177418116e404b8c16c3e4adca4d47 assets\snowdownessentails\models\item\leather_hat.json
+18f004374e1efac99a84cd4542537cd23a22a3a5 assets\snowdownessentails\models\item\leather_boots.json
 803e1f050c4dc4935e44d9755ff43de4178192c1 assets\snowdownessentails\models\item\iron_boots.json
+63a87ace17ee247cf6d5f839292ef18be236029c assets\snowdownessentails\models\item\iron_hat.json
+54ff6d289d2bfcf9723ad73a603680eafa1eb798 assets\snowdownessentails\models\item\iron_chest_belt.json
+6bd7a1d5771879da957ea63fca1c2f818462e5a2 assets\snowdownessentails\models\item\leather_belt.json
+6df6324c67e30a9d301585c155646ffa2ee20f50 assets\snowdownessentails\models\item\iron_belt.json
+4f09d4f71af4acacfdcb61490b73bee24a9158c0 assets\snowdownessentails\models\item\leather_chest_belt.json

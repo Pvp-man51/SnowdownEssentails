@@ -10,8 +10,17 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    SDE_IRON("iron", 15, new int[] { 2, 5, 6, 2}, 9,
-            SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0f, 0f, () -> Ingredient.ofItems(Items.IRON_INGOT))
+
+    LEATHER("leather", 5, new int[] { 1, 3, 2, 1}, 15,
+            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0f, 0f, () -> Ingredient.ofItems(Items.LEATHER)),
+    IRON("iron", 15, new int[] { 2, 5, 6, 2}, 9,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0f, 0f, () -> Ingredient.ofItems(Items.IRON_INGOT)),
+    GOLD("gold", 7, new int[] { 2, 5, 3, 1}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(Items.GOLD_INGOT)),
+    DIAMOND("diamond", 33, new int[] { 3, 8, 6, 3}, 10,
+            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2f, 0f, () -> Ingredient.ofItems(Items.DIAMOND)),
+    NETHERITE("netherite", 37, new int[] { 3, 8, 6, 3}, 15,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3f, 0.1f, () -> Ingredient.ofItems(Items.NETHERITE_INGOT))
     ;
 
     private final String name;

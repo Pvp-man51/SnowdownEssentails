@@ -19,9 +19,14 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.SDE_IRON_HELMET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SDE_IRON_CHESTPLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SDE_IRON_LEGGINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SDE_IRON_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEATHER_HAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEATHER_CHEST_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEATHER_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEATHER_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.IRON_HAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_CHEST_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_BOOTS, Models.GENERATED);
     }
 }

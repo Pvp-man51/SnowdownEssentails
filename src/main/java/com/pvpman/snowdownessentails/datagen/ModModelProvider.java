@@ -38,5 +38,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DIAMOND_CHEST_BELT, Models.GENERATED);
         itemModelGenerator.register(ModItems.DIAMOND_BELT, Models.GENERATED);
         itemModelGenerator.register(ModItems.DIAMOND_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.NETHERITE_HAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERITE_CHEST_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERITE_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERITE_BOOTS, Models.GENERATED);
     }
 }

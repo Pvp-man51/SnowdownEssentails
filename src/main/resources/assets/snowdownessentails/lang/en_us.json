@@ -19,5 +19,10 @@
   "item.snowdownessentails.diamond_belt": "Diamond Belt",
   "item.snowdownessentails.diamond_boots": "Diamond Boots",
 
+  "item.snowdownessentails.netherite_hat": "Netherite Hat",
+  "item.snowdownessentails.netherite_chest_belt": "Netherite Chest Belt",
+  "item.snowdownessentails.netherite_belt": "Netherite Belt",
+  "item.snowdownessentails.netherite_boots": "Netherite Boots",
+
   "itemgroup.snowdown": "Snowdown Essentials"
 }

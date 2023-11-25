@@ -1,10 +1,7 @@
 package com.pvpman.snowdownessentails.item;
 
 import com.pvpman.snowdownessentails.SnowdownEssentails;
-import com.pvpman.snowdownessentails.item.custom.DiamondArmorItem;
-import com.pvpman.snowdownessentails.item.custom.GoldArmorItem;
-import com.pvpman.snowdownessentails.item.custom.IronArmorItem;
-import com.pvpman.snowdownessentails.item.custom.LeatherArmorItem;
+import com.pvpman.snowdownessentails.item.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -49,6 +46,15 @@ public class ModItems {
             new DiamondArmorItem(ModArmorMaterials.DIAMOND, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item DIAMOND_BOOTS = registerItem("diamond_boots",
             new DiamondArmorItem(ModArmorMaterials.DIAMOND, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    public static final Item NETHERITE_HAT = registerItem("netherite_hat",
+            new NetheriteArmorItem(ModArmorMaterials.NETHERITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item NETHERITE_CHEST_BELT = registerItem("netherite_chest_belt",
+            new NetheriteArmorItem(ModArmorMaterials.NETHERITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item NETHERITE_BELT = registerItem("netherite_belt",
+            new NetheriteArmorItem(ModArmorMaterials.NETHERITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item NETHERITE_BOOTS = registerItem("netherite_boots",
+            new NetheriteArmorItem(ModArmorMaterials.NETHERITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(SnowdownEssentails.MOD_ID, name), item);

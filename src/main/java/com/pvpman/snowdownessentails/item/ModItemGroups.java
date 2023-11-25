@@ -36,6 +36,11 @@ public class ModItemGroups {
                         entries.add(ModItems.DIAMOND_BELT);
                         entries.add(ModItems.DIAMOND_BOOTS);
 
+                        entries.add(ModItems.NETHERITE_HAT);
+                        entries.add(ModItems.NETHERITE_CHEST_BELT);
+                        entries.add(ModItems.NETHERITE_BELT);
+                        entries.add(ModItems.NETHERITE_BOOTS);
+
                     }).build());
 
     public static void registerItemGroups(){

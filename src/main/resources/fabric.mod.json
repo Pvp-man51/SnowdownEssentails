@@ -3,7 +3,7 @@
 	"id": "snowdownessentails",
 	"version": "${version}",
 	"name": "SnowdownEssentails",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Fügt (momentan) die ultra coole mega tolle und unverzichtbare Coby Rüstungsvarianten hinzu",
 	"authors": [
 		"Pvp-man"
 	],
@@ -11,7 +11,7 @@
 		"homepage": "https://github.com/Pvp-man51",
 		"sources": "https://github.com/Pvp-man51/SnowdownEssentails"
 	},
-	"license": "CC0-1.0",
+	"license": "IDK",
 	"icon": "assets/snowdownessentails/icon.png",
 	"environment": "*",
 	"entrypoints": {

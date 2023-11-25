@@ -28,5 +28,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.IRON_CHEST_BELT, Models.GENERATED);
         itemModelGenerator.register(ModItems.IRON_BELT, Models.GENERATED);
         itemModelGenerator.register(ModItems.IRON_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.GOLD_HAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GOLD_CHEST_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GOLD_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GOLD_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.DIAMOND_HAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIAMOND_CHEST_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIAMOND_BELT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIAMOND_BOOTS, Models.GENERATED);
     }
 }

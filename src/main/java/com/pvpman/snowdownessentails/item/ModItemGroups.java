@@ -26,6 +26,16 @@ public class ModItemGroups {
                         entries.add(ModItems.IRON_BELT);
                         entries.add(ModItems.IRON_BOOTS);
 
+                        entries.add(ModItems.GOLD_HAT);
+                        entries.add(ModItems.GOLD_CHEST_BELT);
+                        entries.add(ModItems.GOLD_BELT);
+                        entries.add(ModItems.GOLD_BOOTS);
+
+                        entries.add(ModItems.DIAMOND_HAT);
+                        entries.add(ModItems.DIAMOND_CHEST_BELT);
+                        entries.add(ModItems.DIAMOND_BELT);
+                        entries.add(ModItems.DIAMOND_BOOTS);
+
                     }).build());
 
     public static void registerItemGroups(){

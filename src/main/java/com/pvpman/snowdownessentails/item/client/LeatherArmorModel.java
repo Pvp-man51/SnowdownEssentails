@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 public class LeatherArmorModel extends GeoModel<LeatherArmorItem> {
     @Override
     public Identifier getModelResource(LeatherArmorItem animatable) {
-        return new Identifier(SnowdownEssentails.MOD_ID, "geo/armor.geo.json");
+        return new Identifier(SnowdownEssentails.MOD_ID, "geo/leather_armor.geo.json");
     }
 
     @Override

@@ -3,13 +3,12 @@
 	"id": "snowdownessentails",
 	"version": "${version}",
 	"name": "Snowdown Essentails",
-	"description": "Fügt (momentan) die ultra coole mega tolle und unverzichtbare Coby Rüstungsvarianten hinzu",
+	"description": "A mod that adds western type armor for the Snowdown Project by TripleTwo Studios",
 	"authors": [
 		"Pvp-man"
 	],
 	"contact": {
-		"homepage": "https://github.com/Pvp-man51",
-		"sources": "https://github.com/Pvp-man51/SnowdownEssentails"
+		"homepage": "https://github.com/Pvp-man51"
 	},
 	"license": "MIT",
 	"icon": "assets/snowdownessentails/icon.png",

@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-29T16:05:55.5830919	SnowdownEssentails/Model Definitions
+// 1.20.1	2023-12-04T23:26:46.8666665	Snowdown Essentails/Model Definitions
 c958a4679852c3353a064ef246a8f1dbd085c0b2 assets\snowdownessentails\models\item\netherite_boots.json
 18f004374e1efac99a84cd4542537cd23a22a3a5 assets\snowdownessentails\models\item\leather_boots.json
 58ad72103a73c9ba43a7752c88997b6d4ba79c71 assets\snowdownessentails\models\item\netherite_belt.json
@@ -11,11 +11,11 @@ d0068128bdad7bbd27f82c03a7e494be93aef962 assets\snowdownessentails\models\item\g
 4f09d4f71af4acacfdcb61490b73bee24a9158c0 assets\snowdownessentails\models\item\leather_chest_belt.json
 6237f7f2bd98dc05b1b6bb4ec9290b9e14b1e937 assets\snowdownessentails\models\item\gold_chest_belt.json
 8e0b27ba07177418116e404b8c16c3e4adca4d47 assets\snowdownessentails\models\item\leather_hat.json
-803e1f050c4dc4935e44d9755ff43de4178192c1 assets\snowdownessentails\models\item\iron_boots.json
 5978897648de407b3cc31ee3246b32c5177b56ed assets\snowdownessentails\models\item\netherite_hat.json
-5f6354b6c3141e335a9a8500baabf14158b0fd8b assets\snowdownessentails\models\item\diamond_belt.json
+803e1f050c4dc4935e44d9755ff43de4178192c1 assets\snowdownessentails\models\item\iron_boots.json
 017b1e23e6c4f151a8a9984887f1909dd350cfb8 assets\snowdownessentails\models\item\diamond_boots.json
+5f6354b6c3141e335a9a8500baabf14158b0fd8b assets\snowdownessentails\models\item\diamond_belt.json
 6bd7a1d5771879da957ea63fca1c2f818462e5a2 assets\snowdownessentails\models\item\leather_belt.json
 3529266e7a59c9ecfa942886a17e106f06514e79 assets\snowdownessentails\models\item\gold_hat.json
-ba63b1f3bef42456c70432a581728d085622cc50 assets\snowdownessentails\models\item\diamond_hat.json
 6df6324c67e30a9d301585c155646ffa2ee20f50 assets\snowdownessentails\models\item\iron_belt.json
+ba63b1f3bef42456c70432a581728d085622cc50 assets\snowdownessentails\models\item\diamond_hat.json

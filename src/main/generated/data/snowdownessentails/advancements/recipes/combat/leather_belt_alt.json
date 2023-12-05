@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond_helmet": {
+    "has_leather_leggings": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond_helmet"
+              "minecraft:leather_leggings"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "snowdownessentails:diamond_hat"
+        "recipe": "minecraft:leather_belt_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_diamond_helmet",
+      "has_leather_leggings",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "snowdownessentails:diamond_hat"
+      "minecraft:leather_belt_alt"
     ]
   },
   "sends_telemetry_event": false

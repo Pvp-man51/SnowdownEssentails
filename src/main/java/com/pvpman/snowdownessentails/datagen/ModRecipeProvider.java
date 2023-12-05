@@ -4,6 +4,7 @@ import com.pvpman.snowdownessentails.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
@@ -51,30 +52,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.LEATHER))
                 .offerTo(exporter);
         // Alternate
-        //ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_HAT)
-        //        .input(Items.LEATHER_HELMET)
-        //        .input(Items.LEATHER)
-        //        .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_HELMET),
-        //                FabricRecipeProvider.conditionsFromItem(Items.LEATHER_HELMET))
-        //        .offerTo(exporter);
-        //ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_CHEST_BELT)
-        //        .input(Items.LEATHER_CHESTPLATE)
-        //        .input(Items.LEATHER)
-        //        .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_CHESTPLATE),
-        //                FabricRecipeProvider.conditionsFromItem(Items.LEATHER_CHESTPLATE))
-        //        .offerTo(exporter);
-        //ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BELT)
-        //        .input(Items.LEATHER_LEGGINGS)
-        //        .input(Items.LEATHER)
-        //        .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_LEGGINGS),
-        //                FabricRecipeProvider.conditionsFromItem(Items.LEATHER_LEGGINGS))
-        //        .offerTo(exporter);
-        //ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BOOTS)
-        //        .input(Items.LEATHER_BOOTS)
-        //        .input(Items.LEATHER)
-        //        .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_BOOTS),
-        //                FabricRecipeProvider.conditionsFromItem(Items.LEATHER_BOOTS))
-        //        .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_HAT)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.LEATHER)
+                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_HELMET),
+                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_HELMET))
+                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_HAT) + "_alt");
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_CHEST_BELT)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.LEATHER)
+                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_CHESTPLATE),
+                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_CHEST_BELT) + "_alt");
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BELT)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.LEATHER)
+                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_LEGGINGS),
+                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_BELT) + "_alt");
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BOOTS)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.LEATHER)
+                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_BOOTS),
+                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_BOOTS))
+                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_BOOTS) + "_alt");
 
         // Iron
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_HAT)

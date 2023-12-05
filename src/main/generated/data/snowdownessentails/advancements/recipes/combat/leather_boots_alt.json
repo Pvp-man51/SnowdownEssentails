@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_netherite_chestplate": {
+    "has_leather_boots": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:netherite_chestplate"
+              "minecraft:leather_boots"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "snowdownessentails:netherite_chest_belt"
+        "recipe": "minecraft:leather_boots_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_netherite_chestplate",
+      "has_leather_boots",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "snowdownessentails:netherite_chest_belt"
+      "minecraft:leather_boots_alt"
     ]
   },
   "sends_telemetry_event": false

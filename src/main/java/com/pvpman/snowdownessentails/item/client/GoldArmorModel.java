@@ -2,7 +2,6 @@ package com.pvpman.snowdownessentails.item.client;
 
 import com.pvpman.snowdownessentails.SnowdownEssentails;
 import com.pvpman.snowdownessentails.item.custom.GoldArmorItem;
-import com.pvpman.snowdownessentails.item.custom.LeatherArmorItem;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 

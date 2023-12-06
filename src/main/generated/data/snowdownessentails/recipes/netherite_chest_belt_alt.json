@@ -3,13 +3,13 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "minecraft:leather_chestplate"
+      "item": "minecraft:netherite_chestplate"
     },
     {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:leather"
     }
   ],
   "result": {
-    "item": "snowdownessentails:leather_chest_belt"
+    "item": "snowdownessentails:netherite_chest_belt"
   }
 }

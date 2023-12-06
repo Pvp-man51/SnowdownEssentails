@@ -3,13 +3,13 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "minecraft:leather_chestplate"
+      "item": "minecraft:golden_helmet"
     },
     {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:leather"
     }
   ],
   "result": {
-    "item": "snowdownessentails:leather_chest_belt"
+    "item": "snowdownessentails:gold_hat"
   }
 }

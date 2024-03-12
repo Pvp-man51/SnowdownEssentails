@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DLD"
+  ],
+  "result": {
+    "item": "snowdownessentails:diamond_hat"
+  },
+  "show_notification": true
+}

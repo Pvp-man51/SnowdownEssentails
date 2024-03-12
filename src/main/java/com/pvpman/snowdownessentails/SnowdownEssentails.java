@@ -22,16 +22,16 @@ import software.bernie.geckolib.GeckoLib;
 public class SnowdownEssentails
 {
     public static final String MOD_ID = "snowdownessentails";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public SnowdownEssentails()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
 
         GeckoLib.initialize();
 
-        modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);

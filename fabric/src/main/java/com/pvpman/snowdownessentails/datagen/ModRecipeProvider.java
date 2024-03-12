@@ -1,294 +1,295 @@
 package com.pvpman.snowdownessentails.datagen;
 
 import com.pvpman.snowdownessentails.item.ModItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.RecipeProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
 
-public class ModRecipeProvider extends FabricRecipeProvider {
-    public ModRecipeProvider(FabricDataOutput output) {
+public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+    public ModRecipeProvider(PackOutput output) {
         super(output);
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    protected  void buildRecipes(Consumer<FinishedRecipe> consumer) {
         // Leather
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_HAT)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LEATHER_HAT.get())
+                .define('L', Items.LEATHER)
                 .pattern("LLL")
                 .pattern("LLL")
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_CHEST_BELT)
+                .unlockedBy("has_leather", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.LEATHER).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LEATHER_CHEST_BELT.get())
+                .define('L', Items.LEATHER)
+                .define('I', Items.IRON_INGOT)
                 .pattern("L L")
                 .pattern("LIL")
                 .pattern("LLL")
-                .input('I', Items.IRON_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BELT)
+                .unlockedBy("has_leather", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.LEATHER).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LEATHER_BELT.get())
+                .define('L', Items.LEATHER)
                 .pattern("LLL")
                 .pattern("LLL")
                 .pattern("L L")
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BOOTS)
+                .unlockedBy("has_leather", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.LEATHER).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LEATHER_BOOTS.get())
+                .define('L', Items.LEATHER)
                 .pattern("L L")
                 .pattern("LLL")
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER))
-                .offerTo(exporter);
+                .unlockedBy("has_leather", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.LEATHER).build()))
+                .save(consumer);
         // Alternate
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_HAT)
-                .input(Items.LEATHER_HELMET)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_HELMET),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_HELMET))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_HAT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_CHEST_BELT)
-                .input(Items.LEATHER_CHESTPLATE)
-                .input(Items.IRON_INGOT)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_CHESTPLATE),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_CHESTPLATE))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_CHEST_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BELT)
-                .input(Items.LEATHER_LEGGINGS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_LEGGINGS),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_LEGGINGS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.LEATHER_BOOTS)
-                .input(Items.LEATHER_BOOTS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.LEATHER_BOOTS),
-                        FabricRecipeProvider.conditionsFromItem(Items.LEATHER_BOOTS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.LEATHER_BOOTS) + "_alt");
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.LEATHER_HAT.get())
+//                .requires(Items.LEATHER_HELMET)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_leather_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.LEATHER).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.LEATHER_CHEST_BELT.get())
+//                .requires(Items.LEATHER_CHESTPLATE)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_leather_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.LEATHER).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.LEATHER_BELT.get())
+//                .requires(Items.LEATHER_LEGGINGS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_leather_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.LEATHER).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.LEATHER_BOOTS.get())
+//                .requires(Items.LEATHER_BOOTS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_leather_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.LEATHER).build()))
+//                .save(consumer);
 
         // Iron
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_HAT)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.IRON_HAT.get())
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("III")
                 .pattern("ILI")
-                .input('I', Items.IRON_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_CHEST_BELT)
+                .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.IRON_INGOT).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.IRON_CHEST_BELT.get())
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("ILI")
                 .pattern("III")
                 .pattern("III")
-                .input('I', Items.IRON_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_BELT)
+                .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.IRON_INGOT).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.IRON_BELT.get())
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("III")
                 .pattern("ILI")
                 .pattern("I I")
-                .input('I', Items.IRON_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_BOOTS)
+                .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.IRON_INGOT).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.IRON_BOOTS.get())
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("I I")
                 .pattern("ILI")
-                .input('I', Items.IRON_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        // Alternate
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_HAT)
-                .input(Items.IRON_HELMET)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_HELMET),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_HELMET))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.IRON_HAT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_CHEST_BELT)
-                .input(Items.IRON_CHESTPLATE)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_CHESTPLATE),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_CHESTPLATE))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.IRON_CHEST_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_BELT)
-                .input(Items.IRON_LEGGINGS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_LEGGINGS),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_LEGGINGS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.IRON_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.IRON_BOOTS)
-                .input(Items.IRON_BOOTS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_BOOTS),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_BOOTS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.IRON_BOOTS) + "_alt");
+                .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.IRON_INGOT).build()))
+                .save(consumer);
+
+//        // Alternate
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.IRON_HAT.get())
+//                .requires(Items.IRON_HELMET)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_iron_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.IRON_HELMET).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.IRON_CHEST_BELT.get())
+//                .requires(Items.IRON_CHESTPLATE)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_iron_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.IRON_CHESTPLATE).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.IRON_BELT.get())
+//                .requires(Items.IRON_LEGGINGS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_iron_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.IRON_LEGGINGS).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.IRON_BOOTS.get())
+//                .requires(Items.IRON_BOOTS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_iron_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.IRON_BOOTS).build()))
+//                .save(consumer);
 
         // Gold
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_HAT)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GOLD_HAT.get())
+                .define('G', Items.GOLD_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("GGG")
                 .pattern("GLG")
-                .input('G', Items.GOLD_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_CHEST_BELT)
+                .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.GOLD_INGOT).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GOLD_CHEST_BELT.get())
+                .define('G', Items.GOLD_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("GLG")
                 .pattern("GGG")
                 .pattern("GGG")
-                .input('G', Items.GOLD_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_BELT)
+                .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.GOLD_INGOT).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GOLD_BELT.get())
+                .define('G', Items.GOLD_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("GGG")
                 .pattern("GLG")
                 .pattern("G G")
-                .input('G', Items.GOLD_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_BOOTS)
+                .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.GOLD_INGOT).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GOLD_BOOTS.get())
+                .define('G', Items.GOLD_INGOT)
+                .define('L', Items.LEATHER)
                 .pattern("G G")
                 .pattern("GLG")
-                .input('G', Items.GOLD_INGOT)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        // Alternate
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_HAT)
-                .input(Items.GOLDEN_HELMET)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLDEN_HELMET),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLDEN_HELMET))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.GOLD_HAT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_CHEST_BELT)
-                .input(Items.GOLDEN_CHESTPLATE)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLDEN_CHESTPLATE),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLDEN_CHESTPLATE))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.GOLD_CHEST_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_BELT)
-                .input(Items.GOLDEN_LEGGINGS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLDEN_LEGGINGS),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLDEN_LEGGINGS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.GOLD_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLD_BOOTS)
-                .input(Items.GOLDEN_BOOTS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLDEN_BOOTS),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLDEN_BOOTS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.GOLD_BOOTS) + "_alt");
+                .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.GOLD_INGOT).build()))
+                .save(consumer);
+
+//        // Alternate
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.GOLD_HAT.get())
+//                .requires(Items.GOLDEN_HELMET)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_gold_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.GOLDEN_HELMET).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.GOLD_CHEST_BELT.get())
+//                .requires(Items.GOLDEN_CHESTPLATE)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_gold_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.GOLDEN_CHESTPLATE).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.GOLD_BELT.get())
+//                .requires(Items.GOLDEN_LEGGINGS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_gold_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.GOLDEN_LEGGINGS).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.GOLD_BOOTS.get())
+//                .requires(Items.GOLDEN_BOOTS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_gold_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.GOLDEN_BOOTS).build()))
+//                .save(consumer);
+
 
         // Diamond
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_HAT)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.DIAMOND_HAT.get())
+                .define('D', Items.DIAMOND)
+                .define('L', Items.LEATHER)
                 .pattern("DDD")
                 .pattern("DLD")
-                .input('D', Items.DIAMOND)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_CHEST_BELT)
+                .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.DIAMOND).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.DIAMOND_CHEST_BELT.get())
+                .define('D', Items.DIAMOND)
+                .define('L', Items.LEATHER)
                 .pattern("DLD")
                 .pattern("DDD")
                 .pattern("DDD")
-                .input('D', Items.DIAMOND)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_BELT)
+                .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.DIAMOND).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.DIAMOND_BELT.get())
+                .define('D', Items.DIAMOND)
+                .define('L', Items.LEATHER)
                 .pattern("DDD")
                 .pattern("DLD")
                 .pattern("D D")
-                .input('D', Items.DIAMOND)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_BOOTS)
+                .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.DIAMOND).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.DIAMOND_BOOTS.get())
+                .define('D', Items.DIAMOND)
+                .define('L', Items.LEATHER)
                 .pattern("D D")
                 .pattern("DLD")
-                .input('D', Items.DIAMOND)
-                .input('L', Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter);
-        // Alternate
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_HAT)
-                .input(Items.DIAMOND_HELMET)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND_HELMET),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND_HELMET))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.DIAMOND_HAT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_CHEST_BELT)
-                .input(Items.DIAMOND_CHESTPLATE)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND_CHESTPLATE),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND_CHESTPLATE))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.DIAMOND_CHEST_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_BELT)
-                .input(Items.DIAMOND_LEGGINGS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND_LEGGINGS),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND_LEGGINGS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.DIAMOND_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DIAMOND_BOOTS)
-                .input(Items.DIAMOND_BOOTS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND_BOOTS),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND_BOOTS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.DIAMOND_BOOTS) + "_alt");
+                .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.DIAMOND).build()))
+                .save(consumer);
+
+//        // Alternate
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.DIAMOND_HAT.get())
+//                .requires(Items.DIAMOND_HELMET)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_diamond_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.DIAMOND_HELMET).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.DIAMOND_CHEST_BELT.get())
+//                .requires(Items.DIAMOND_CHESTPLATE)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_diamond_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.DIAMOND_CHESTPLATE).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.DIAMOND_BELT.get())
+//                .requires(Items.DIAMOND_LEGGINGS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_diamond_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.DIAMOND_LEGGINGS).build()))
+//                .save(consumer);
+//        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.DIAMOND_BOOTS.get())
+//                .requires(Items.DIAMOND_BOOTS)
+//                .requires(Items.LEATHER)
+//                .unlockedBy("has_diamond_alt", inventoryTrigger(ItemPredicate.Builder.item()
+//                        .of(Items.DIAMOND_BOOTS).build()))
+//                .save(consumer);
 
         // Netherite
-        offerNetheriteUpgradeRecipe(exporter, ModItems.DIAMOND_HAT, RecipeCategory.COMBAT, ModItems.NETHERITE_HAT);
-        offerNetheriteUpgradeRecipe(exporter, ModItems.DIAMOND_CHEST_BELT, RecipeCategory.COMBAT, ModItems.NETHERITE_CHEST_BELT);
-        offerNetheriteUpgradeRecipe(exporter, ModItems.DIAMOND_BELT, RecipeCategory.COMBAT, ModItems.NETHERITE_BELT);
-        offerNetheriteUpgradeRecipe(exporter, ModItems.DIAMOND_BOOTS, RecipeCategory.COMBAT, ModItems.NETHERITE_BOOTS);
+        netheriteSmithing(consumer, ModItems.DIAMOND_HAT.get(), RecipeCategory.COMBAT, ModItems.NETHERITE_HAT.get());
+        netheriteSmithing(consumer, ModItems.DIAMOND_CHEST_BELT.get(), RecipeCategory.COMBAT, ModItems.NETHERITE_CHEST_BELT.get());
+        netheriteSmithing(consumer, ModItems.DIAMOND_BELT.get(), RecipeCategory.COMBAT, ModItems.NETHERITE_BELT.get());
+        netheriteSmithing(consumer, ModItems.DIAMOND_BOOTS.get(), RecipeCategory.COMBAT, ModItems.NETHERITE_BOOTS.get());
         // Alternate
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.NETHERITE_HAT)
-                .input(Items.NETHERITE_HELMET)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_HELMET),
-                        FabricRecipeProvider.conditionsFromItem(Items.NETHERITE_HELMET))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.NETHERITE_HAT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.NETHERITE_CHEST_BELT)
-                .input(Items.NETHERITE_CHESTPLATE)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_CHESTPLATE),
-                        FabricRecipeProvider.conditionsFromItem(Items.NETHERITE_CHESTPLATE))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.NETHERITE_CHEST_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.NETHERITE_BELT)
-                .input(Items.NETHERITE_LEGGINGS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_LEGGINGS),
-                        FabricRecipeProvider.conditionsFromItem(Items.NETHERITE_LEGGINGS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.NETHERITE_BELT) + "_alt");
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.NETHERITE_BOOTS)
-                .input(Items.NETHERITE_BOOTS)
-                .input(Items.LEATHER)
-                .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_BOOTS),
-                        FabricRecipeProvider.conditionsFromItem(Items.NETHERITE_BOOTS))
-                .offerTo(exporter, RecipeProvider.getItemPath(ModItems.NETHERITE_BOOTS) + "_alt");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.NETHERITE_HAT.get())
+                .requires(Items.NETHERITE_HELMET)
+                .requires(Items.LEATHER)
+                .unlockedBy("has_netherite_alt", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.NETHERITE_HELMET).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.NETHERITE_CHEST_BELT.get())
+                .requires(Items.NETHERITE_CHESTPLATE)
+                .requires(Items.LEATHER)
+                .unlockedBy("has_netherite_alt", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.NETHERITE_CHESTPLATE).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.NETHERITE_BELT.get())
+                .requires(Items.NETHERITE_LEGGINGS)
+                .requires(Items.LEATHER)
+                .unlockedBy("has_netherite_alt", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.NETHERITE_LEGGINGS).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.NETHERITE_BOOTS.get())
+                .requires(Items.NETHERITE_BOOTS)
+                .requires(Items.LEATHER)
+                .unlockedBy("has_netherite_alt", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.NETHERITE_BOOTS).build()))
+                .save(consumer);
     }
 }

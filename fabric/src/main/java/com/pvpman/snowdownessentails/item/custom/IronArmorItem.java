@@ -1,52 +1,45 @@
 package com.pvpman.snowdownessentails.item.custom;
 
 import com.pvpman.snowdownessentails.item.client.IronArmorRenderer;
-import net.minecraft.client.render.entity.model.BipedEntityModel;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ItemStack;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
-import software.bernie.geckolib.animatable.client.RenderProvider;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.renderer.GeoArmorRenderer;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class IronArmorItem extends ArmorItem implements GeoItem {
-    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
-
-    public IronArmorItem(ArmorMaterial material, Type type, Settings settings) {
-        super(material, type, settings);
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    public IronArmorItem(ArmorMaterial material, Type type, Properties properties) {
+        super(material, type, properties);
     }
-
     @Override
-    public void createRenderer(Consumer<Object> consumer) {
-        consumer.accept(new RenderProvider() {
-            private IronArmorRenderer renderer;
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            private GeoArmorRenderer<?> renderer;
+
             @Override
-            public IronArmorRenderer getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-                                                           EquipmentSlot equipmentSlot, BipedEntityModel<LivingEntity> original) {
-
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
                 if (this.renderer == null)
-                        this.renderer = new IronArmorRenderer();
+                    this.renderer = new IronArmorRenderer();
 
+                // This prepares our GeoArmorRenderer for the current render frame.
+                // These parameters may be null however, so we don't do anything further with them
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
 
                 return this.renderer;
             }
         });
-    }
-
-    @Override
-    public Supplier<Object> getRenderProvider() {
-        return this.renderProvider;
     }
 
     @Override

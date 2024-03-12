@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "snowdownessentails:item/netherite_hat"
+  }
+}

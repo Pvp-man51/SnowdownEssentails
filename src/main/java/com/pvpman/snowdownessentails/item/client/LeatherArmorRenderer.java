@@ -1,7 +1,7 @@
 package com.pvpman.snowdownessentails.item.client;
 
 import com.pvpman.snowdownessentails.item.custom.LeatherArmorItem;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlot;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 public class LeatherArmorRenderer extends GeoArmorRenderer<LeatherArmorItem> {
@@ -11,7 +11,7 @@ public class LeatherArmorRenderer extends GeoArmorRenderer<LeatherArmorItem> {
 
     @Override
     protected void applyBoneVisibilityBySlot(EquipmentSlot currentSlot) {
-        setVisible(false);
+        setAllVisible(false);
 
         switch (currentSlot) {
             case HEAD -> {

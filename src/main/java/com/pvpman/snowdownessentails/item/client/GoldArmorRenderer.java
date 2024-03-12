@@ -1,7 +1,7 @@
 package com.pvpman.snowdownessentails.item.client;
 
 import com.pvpman.snowdownessentails.item.custom.GoldArmorItem;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlot;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 public class GoldArmorRenderer extends GeoArmorRenderer<GoldArmorItem> {
@@ -12,7 +12,7 @@ public class GoldArmorRenderer extends GeoArmorRenderer<GoldArmorItem> {
 
     @Override
     protected void applyBoneVisibilityBySlot(EquipmentSlot currentSlot) {
-        setVisible(false);
+        setAllVisible(false);
 
         switch (currentSlot) {
             case HEAD -> {

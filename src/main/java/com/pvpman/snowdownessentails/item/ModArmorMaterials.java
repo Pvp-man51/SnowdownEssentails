@@ -1,26 +1,26 @@
 package com.pvpman.snowdownessentails.item;
 
-import net.minecraft.item.ArmorItem.Type;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.ArmorItem.Type;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
 
     LEATHER("leather", 6, new int[] { 1, 3, 2, 1}, 15,
-            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0f, 0f, () -> Ingredient.ofItems(Items.LEATHER)),
+            SoundEvents.ARMOR_EQUIP_LEATHER, 0f, 0f, () -> Ingredient.of(Items.LEATHER)),
     IRON("iron", 16, new int[] { 2, 5, 6, 2}, 9,
-            SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0f, 0f, () -> Ingredient.ofItems(Items.IRON_INGOT)),
+            SoundEvents.ARMOR_EQUIP_IRON, 0f, 0f, () -> Ingredient.of(Items.IRON_INGOT)),
     GOLD("gold", 8, new int[] { 2, 5, 3, 1}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(Items.GOLD_INGOT)),
+            SoundEvents.ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.of(Items.GOLD_INGOT)),
     DIAMOND("diamond", 34, new int[] { 3, 8, 6, 3}, 10,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2f, 0f, () -> Ingredient.ofItems(Items.DIAMOND)),
+            SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0f, () -> Ingredient.of(Items.DIAMOND)),
     NETHERITE("netherite", 38, new int[] { 3, 8, 6, 3}, 15,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3f, 0.1f, () -> Ingredient.ofItems(Items.NETHERITE_INGOT))
+            SoundEvents.ARMOR_EQUIP_NETHERITE, 3f, 0.1f, () -> Ingredient.of(Items.NETHERITE_INGOT))
     ;
 
     private final String name;
@@ -47,17 +47,17 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     @Override
-    public int getDurability(Type type) {
+    public int getDurabilityForType(Type type) {
         return BASE_DUARBILITY[type.ordinal()] * this.durabilityMultiplier;
     }
 
     @Override
-    public int getProtection(Type type) {
+    public int getDefenseForType(Type type) {
         return protectionAmounts[type.ordinal()];
     }
 
     @Override
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 

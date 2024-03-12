@@ -2,16 +2,16 @@
 	"schemaVersion": 1,
 	"id": "snowdownessentails",
 	"version": "${version}",
-	"name": "Snowdown Essentails",
-	"description": "A mod that adds western type armor for the Snowdown Project by TripleTwo Studios",
+	"name": "${mod_name}",
+	"description": "${description}",
 	"authors": [
-		"Pvp-man"
+		"${mod_author}"
 	],
 	"contact": {
 		"homepage": "https://github.com/Pvp-man51"
 	},
-	"license": "MIT",
-	"icon": "assets/snowdownessentails/icon.png",
+	"license": "${license}",
+	"icon": "assets/${mod_id}/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

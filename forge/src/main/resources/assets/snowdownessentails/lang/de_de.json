@@ -1,0 +1,28 @@
+{
+  "item.snowdownessentails.leather_hat": "Lederhut",
+  "item.snowdownessentails.leather_chest_belt": "Lederbrustgürtel",
+  "item.snowdownessentails.leather_belt": "Ledergürtel",
+  "item.snowdownessentails.leather_boots": "Lederstiefel",
+
+  "item.snowdownessentails.iron_hat": "Eisenhut",
+  "item.snowdownessentails.iron_chest_belt": "Eisenbrustgürtel",
+  "item.snowdownessentails.iron_belt": "Eisengürtel",
+  "item.snowdownessentails.iron_boots": "Eisenstiefel",
+
+  "item.snowdownessentails.gold_hat": "Goldhut",
+  "item.snowdownessentails.gold_chest_belt": "Goldbrustgürtel",
+  "item.snowdownessentails.gold_belt": "Goldgürtel",
+  "item.snowdownessentails.gold_boots": "Goldstiefel",
+
+  "item.snowdownessentails.diamond_hat": "Diamantenhut",
+  "item.snowdownessentails.diamond_chest_belt": "Diamantenbrustgürtel",
+  "item.snowdownessentails.diamond_belt": "Diamantengürtel",
+  "item.snowdownessentails.diamond_boots": "Diamantenstiefel",
+
+  "item.snowdownessentails.netherite_hat": "Netheritehut",
+  "item.snowdownessentails.netherite_chest_belt": "Netheritebrustgürtel",
+  "item.snowdownessentails.netherite_belt": "Netheritegürtel",
+  "item.snowdownessentails.netherite_boots": "Netheritestiefel",
+
+  "itemgroup.snowdown": "Snowdown Essentials"
+}

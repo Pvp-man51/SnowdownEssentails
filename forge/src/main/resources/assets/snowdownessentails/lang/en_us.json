@@ -1,0 +1,28 @@
+{
+  "item.snowdownessentails.leather_hat": "Leather Hat",
+  "item.snowdownessentails.leather_chest_belt": "Leather Chest Belt",
+  "item.snowdownessentails.leather_belt": "Leather Belt",
+  "item.snowdownessentails.leather_boots": "Leather Boots",
+
+  "item.snowdownessentails.iron_hat": "Iron Hat",
+  "item.snowdownessentails.iron_chest_belt": "Iron Chest Belt",
+  "item.snowdownessentails.iron_belt": "Iron Belt",
+  "item.snowdownessentails.iron_boots": "Iron Boots",
+
+  "item.snowdownessentails.gold_hat": "Golden Hat",
+  "item.snowdownessentails.gold_chest_belt": "Golden Chest Belt",
+  "item.snowdownessentails.gold_belt": "Golden Belt",
+  "item.snowdownessentails.gold_boots": "Golden Boots",
+
+  "item.snowdownessentails.diamond_hat": "Diamond Hat",
+  "item.snowdownessentails.diamond_chest_belt": "Diamond Chest Belt",
+  "item.snowdownessentails.diamond_belt": "Diamond Belt",
+  "item.snowdownessentails.diamond_boots": "Diamond Boots",
+
+  "item.snowdownessentails.netherite_hat": "Netherite Hat",
+  "item.snowdownessentails.netherite_chest_belt": "Netherite Chest Belt",
+  "item.snowdownessentails.netherite_belt": "Netherite Belt",
+  "item.snowdownessentails.netherite_boots": "Netherite Boots",
+
+  "itemgroup.snowdown": "Snowdown Essentials"
+}
